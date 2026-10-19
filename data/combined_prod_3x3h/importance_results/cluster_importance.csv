@@ -1,0 +1,201 @@
+model,task,cluster,label,size,importance,std
+LogisticRegression,binary,5,port_rx_packets_std (+14),15,0.22738173340818127,0.004111426691720608
+LogisticRegression,binary,1,flow_packets_per_flow (+4),5,0.14284201814059294,0.0038756115858879074
+LogisticRegression,binary,2,flow_packet_count_std (+2),3,0.22518188447203857,0.0033935980158990653
+LogisticRegression,binary,7,no_of_total_flows (+3),4,0.32434545127411246,0.005805434112386942
+LogisticRegression,binary,10,no_of_tcp_flows (+1),2,0.03163293798883384,0.0025572577080604326
+LogisticRegression,binary,12,no_of_udp_flows,1,0.009310240936261715,0.0025641714516511645
+LogisticRegression,binary,13,no_of_icmp_flows,1,0.03971209902833765,0.002161557913216725
+LogisticRegression,binary,14,no_of_other_flows,1,0.002504993953902357,0.0015629169369198116
+LogisticRegression,binary,8,no_of_unique_src_addresses (+3),4,0.11506860793468139,0.002636150462287562
+LogisticRegression,binary,9,no_of_unique_dst_addresses,1,0.03838705124578066,0.0023733038859778117
+LogisticRegression,binary,11,no_of_unique_src_ports (+2),3,0.05224501479990433,0.003273294893046184
+LogisticRegression,binary,4,port_tx_packets_std (+7),8,0.25348122134234763,0.004266784298744493
+LogisticRegression,binary,21,port_tx_errors_sum,1,0.0,0.0
+LogisticRegression,binary,22,port_tx_errors_mean,1,0.0,0.0
+LogisticRegression,binary,23,port_tx_errors_std,1,0.0,0.0
+LogisticRegression,binary,24,port_tx_dropped_sum,1,0.0,0.0
+LogisticRegression,binary,25,port_rx_errors_sum,1,0.0,0.0
+LogisticRegression,binary,3,table_lookup_count_std (+1),2,0.10194309460246567,0.003336430699008899
+LogisticRegression,binary,6,port_rx_packets_sum_diff (+5),6,0.017021589982605834,0.0018070832867869897
+LogisticRegression,binary,16,no_of_total_flows_diff,1,0.03117311362617887,0.001815187101868843
+LogisticRegression,binary,17,no_of_tcp_flows_diff,1,0.025510590174875246,0.0021134901733253237
+LogisticRegression,binary,20,no_of_udp_flows_diff,1,0.017035249002055653,0.0021875227948510104
+LogisticRegression,binary,19,no_of_icmp_flows_diff,1,0.013656718737661666,0.0012401965322022819
+LogisticRegression,binary,15,no_of_other_flows_diff,1,0.001955443231182963,0.0008958342276620011
+LogisticRegression,binary,18,no_of_unique_src_addresses_diff,1,0.03145807412925402,0.003370873070096379
+LogisticRegression,multiclass,5,port_rx_packets_std (+14),15,0.3185828235449935,0.0026273223522465766
+LogisticRegression,multiclass,1,flow_packets_per_flow (+4),5,0.10898824046844754,0.00301751327234083
+LogisticRegression,multiclass,2,flow_packet_count_std (+2),3,0.2547767683691493,0.0035606468715467018
+LogisticRegression,multiclass,7,no_of_total_flows (+3),4,0.20539499300437697,0.003816346237072079
+LogisticRegression,multiclass,10,no_of_tcp_flows (+1),2,0.13223324453944846,0.002925037114834059
+LogisticRegression,multiclass,12,no_of_udp_flows,1,0.22225177989624334,0.002902821657777348
+LogisticRegression,multiclass,13,no_of_icmp_flows,1,0.06457476128512712,0.0019518958666950358
+LogisticRegression,multiclass,14,no_of_other_flows,1,0.004146253359776397,0.0014166234014936557
+LogisticRegression,multiclass,8,no_of_unique_src_addresses (+3),4,0.1439620988503753,0.002707431839932985
+LogisticRegression,multiclass,9,no_of_unique_dst_addresses,1,0.05285087431325315,0.00201323426935664
+LogisticRegression,multiclass,11,no_of_unique_src_ports (+2),3,0.24114477620501482,0.0027728906520271086
+LogisticRegression,multiclass,4,port_tx_packets_std (+7),8,0.31174649221880874,0.002607626599793662
+LogisticRegression,multiclass,21,port_tx_errors_sum,1,0.0,0.0
+LogisticRegression,multiclass,22,port_tx_errors_mean,1,0.0,0.0
+LogisticRegression,multiclass,23,port_tx_errors_std,1,0.0,0.0
+LogisticRegression,multiclass,24,port_tx_dropped_sum,1,0.0,0.0
+LogisticRegression,multiclass,25,port_rx_errors_sum,1,0.0,0.0
+LogisticRegression,multiclass,3,table_lookup_count_std (+1),2,0.08285712108026785,0.0023782627491996267
+LogisticRegression,multiclass,6,port_rx_packets_sum_diff (+5),6,0.03170080976960267,0.0016859984979335366
+LogisticRegression,multiclass,16,no_of_total_flows_diff,1,0.07326051266401391,0.0026870120662162286
+LogisticRegression,multiclass,17,no_of_tcp_flows_diff,1,0.051195284107770446,0.0013114159333599315
+LogisticRegression,multiclass,20,no_of_udp_flows_diff,1,0.057446794694172555,0.00209192316438678
+LogisticRegression,multiclass,19,no_of_icmp_flows_diff,1,0.03124606957746453,0.0004861323554164719
+LogisticRegression,multiclass,15,no_of_other_flows_diff,1,0.005786683979114771,0.0009415889218308347
+LogisticRegression,multiclass,18,no_of_unique_src_addresses_diff,1,0.053754670618471834,0.0017050951002014953
+SVM,binary,5,port_rx_packets_std (+14),15,0.13377103031118934,0.005829567121799972
+SVM,binary,1,flow_packets_per_flow (+4),5,0.13707430256796416,0.005131605182599523
+SVM,binary,2,flow_packet_count_std (+2),3,0.22246484988316634,0.004745631485688567
+SVM,binary,7,no_of_total_flows (+3),4,0.1814440427025937,0.005163196011618767
+SVM,binary,10,no_of_tcp_flows (+1),2,0.03835950781118621,0.0026887578400871135
+SVM,binary,12,no_of_udp_flows,1,0.014943422806149752,0.0013894920174598083
+SVM,binary,13,no_of_icmp_flows,1,0.015374148557059875,0.002027654891432774
+SVM,binary,14,no_of_other_flows,1,-0.004534819204342766,0.0015801247690585094
+SVM,binary,8,no_of_unique_src_addresses (+3),4,0.07862202281723049,0.0039569445644840615
+SVM,binary,9,no_of_unique_dst_addresses,1,0.035725836363116284,0.0035440761517731914
+SVM,binary,11,no_of_unique_src_ports (+2),3,0.04183640107930059,0.0023097119553038515
+SVM,binary,4,port_tx_packets_std (+7),8,0.10481606567196408,0.004464483281530638
+SVM,binary,21,port_tx_errors_sum,1,0.0,0.0
+SVM,binary,22,port_tx_errors_mean,1,0.0,0.0
+SVM,binary,23,port_tx_errors_std,1,0.0,0.0
+SVM,binary,24,port_tx_dropped_sum,1,0.0,0.0
+SVM,binary,25,port_rx_errors_sum,1,0.0,0.0
+SVM,binary,3,table_lookup_count_std (+1),2,0.06377908755711412,0.0032511690890309306
+SVM,binary,6,port_rx_packets_sum_diff (+5),6,0.01531270516558494,0.001800109175606405
+SVM,binary,16,no_of_total_flows_diff,1,0.007150573180349307,0.0014603478468919386
+SVM,binary,17,no_of_tcp_flows_diff,1,0.0070382971614766365,0.0016428054481084585
+SVM,binary,20,no_of_udp_flows_diff,1,0.008994442533571057,0.0015403125960459466
+SVM,binary,19,no_of_icmp_flows_diff,1,0.005237895425960082,0.0007111547327119744
+SVM,binary,15,no_of_other_flows_diff,1,0.0013181194362911985,0.0008995068695052025
+SVM,binary,18,no_of_unique_src_addresses_diff,1,0.013020988978919734,0.0015307895346823438
+SVM,multiclass,5,port_rx_packets_std (+14),15,0.13492578565096056,0.0033985746234257144
+SVM,multiclass,1,flow_packets_per_flow (+4),5,0.18557840265178335,0.0055252254833153104
+SVM,multiclass,2,flow_packet_count_std (+2),3,0.1485929357817176,0.0038495588323624844
+SVM,multiclass,7,no_of_total_flows (+3),4,0.22135223875466314,0.0023420410326498017
+SVM,multiclass,10,no_of_tcp_flows (+1),2,0.11406216537626665,0.0026921867714979684
+SVM,multiclass,12,no_of_udp_flows,1,0.06571554340350322,0.0015925681988288997
+SVM,multiclass,13,no_of_icmp_flows,1,0.029458517729453227,0.0013671912926374607
+SVM,multiclass,14,no_of_other_flows,1,0.00974354707742341,0.001607062660764042
+SVM,multiclass,8,no_of_unique_src_addresses (+3),4,0.09365565655611535,0.003249869623202817
+SVM,multiclass,9,no_of_unique_dst_addresses,1,0.13747932296425852,0.003524389197679278
+SVM,multiclass,11,no_of_unique_src_ports (+2),3,0.10833417554814764,0.002109824507277754
+SVM,multiclass,4,port_tx_packets_std (+7),8,0.13478722586851558,0.0030525904563607877
+SVM,multiclass,21,port_tx_errors_sum,1,0.0,0.0
+SVM,multiclass,22,port_tx_errors_mean,1,0.0,0.0
+SVM,multiclass,23,port_tx_errors_std,1,0.0,0.0
+SVM,multiclass,24,port_tx_dropped_sum,1,0.0,0.0
+SVM,multiclass,25,port_rx_errors_sum,1,0.0,0.0
+SVM,multiclass,3,table_lookup_count_std (+1),2,0.04810972452926325,0.003239424939838534
+SVM,multiclass,6,port_rx_packets_sum_diff (+5),6,0.034219809196577446,0.001994713366565183
+SVM,multiclass,16,no_of_total_flows_diff,1,0.00824876607315389,0.0013950779032909468
+SVM,multiclass,17,no_of_tcp_flows_diff,1,0.008893595646082043,0.0010756287395470112
+SVM,multiclass,20,no_of_udp_flows_diff,1,0.017991466396958332,0.0008601539684806353
+SVM,multiclass,19,no_of_icmp_flows_diff,1,0.009449692155549583,0.0008124465051910924
+SVM,multiclass,15,no_of_other_flows_diff,1,0.010393945181447073,0.0015380612560490139
+SVM,multiclass,18,no_of_unique_src_addresses_diff,1,0.011659244036539873,0.0015883851813421129
+RandomForest,binary,5,port_rx_packets_std (+14),15,0.000981845789118907,0.0005862914218766076
+RandomForest,binary,1,flow_packets_per_flow (+4),5,0.016860696301317334,0.0018975872510107058
+RandomForest,binary,2,flow_packet_count_std (+2),3,-0.0010557729901163992,0.0004683816155092726
+RandomForest,binary,7,no_of_total_flows (+3),4,0.036920694669064946,0.0014883577268956214
+RandomForest,binary,10,no_of_tcp_flows (+1),2,-0.001246858812300522,0.00043296737184507153
+RandomForest,binary,12,no_of_udp_flows,1,-8.219942743372676e-05,0.00030730806044481935
+RandomForest,binary,13,no_of_icmp_flows,1,-0.00010006085002441933,0.00033530233126477114
+RandomForest,binary,14,no_of_other_flows,1,0.0,0.0
+RandomForest,binary,8,no_of_unique_src_addresses (+3),4,0.006195340686823858,0.0014464386917768116
+RandomForest,binary,9,no_of_unique_dst_addresses,1,-0.0022053569815826068,0.000514037506958581
+RandomForest,binary,11,no_of_unique_src_ports (+2),3,0.0065397511552931055,0.002670530410910598
+RandomForest,binary,4,port_tx_packets_std (+7),8,0.00196950441541881,0.0006058168763878376
+RandomForest,binary,21,port_tx_errors_sum,1,0.0,0.0
+RandomForest,binary,22,port_tx_errors_mean,1,0.0,0.0
+RandomForest,binary,23,port_tx_errors_std,1,0.0,0.0
+RandomForest,binary,24,port_tx_dropped_sum,1,0.0,0.0
+RandomForest,binary,25,port_rx_errors_sum,1,0.0,0.0
+RandomForest,binary,3,table_lookup_count_std (+1),2,0.00015482162334957695,0.0003095537001219993
+RandomForest,binary,6,port_rx_packets_sum_diff (+5),6,0.13483516988866287,0.0029753702890319804
+RandomForest,binary,16,no_of_total_flows_diff,1,0.0004922080467953726,0.00016401397183111717
+RandomForest,binary,17,no_of_tcp_flows_diff,1,0.001519592586820051,0.0002026324903372584
+RandomForest,binary,20,no_of_udp_flows_diff,1,0.0,0.0
+RandomForest,binary,19,no_of_icmp_flows_diff,1,0.0,0.0
+RandomForest,binary,15,no_of_other_flows_diff,1,0.0,0.0
+RandomForest,binary,18,no_of_unique_src_addresses_diff,1,0.0016004640281419458,0.0001939953397269404
+RandomForest,multiclass,5,port_rx_packets_std (+14),15,-0.0003658744178926754,0.0004981597122757715
+RandomForest,multiclass,1,flow_packets_per_flow (+4),5,0.0005067122743042662,0.0016146405622508649
+RandomForest,multiclass,2,flow_packet_count_std (+2),3,-0.0014314138175801183,0.001015887057293206
+RandomForest,multiclass,7,no_of_total_flows (+3),4,0.008982517696721837,0.0017124535670043593
+RandomForest,multiclass,10,no_of_tcp_flows (+1),2,0.12731077346837272,0.00490552398358641
+RandomForest,multiclass,12,no_of_udp_flows,1,0.0037516859942059,0.0006220268575858413
+RandomForest,multiclass,13,no_of_icmp_flows,1,0.0038194539851389873,0.0010530179698066797
+RandomForest,multiclass,14,no_of_other_flows,1,0.00018255784894569694,0.0001369697576609031
+RandomForest,multiclass,8,no_of_unique_src_addresses (+3),4,0.031655171045717655,0.001206695634868247
+RandomForest,multiclass,9,no_of_unique_dst_addresses,1,0.001696978878186528,0.0006202826875860903
+RandomForest,multiclass,11,no_of_unique_src_ports (+2),3,0.043875877101541214,0.0041104991484138525
+RandomForest,multiclass,4,port_tx_packets_std (+7),8,8.624782550236132e-05,9.641918130690277e-05
+RandomForest,multiclass,21,port_tx_errors_sum,1,0.0,0.0
+RandomForest,multiclass,22,port_tx_errors_mean,1,0.0,0.0
+RandomForest,multiclass,23,port_tx_errors_std,1,0.0,0.0
+RandomForest,multiclass,24,port_tx_dropped_sum,1,0.0,0.0
+RandomForest,multiclass,25,port_rx_errors_sum,1,0.0,0.0
+RandomForest,multiclass,3,table_lookup_count_std (+1),2,-0.00011606630250571293,0.0
+RandomForest,multiclass,6,port_rx_packets_sum_diff (+5),6,0.1406713807195135,0.0014031920399807034
+RandomForest,multiclass,16,no_of_total_flows_diff,1,0.00033390120620812035,0.00014820782729790794
+RandomForest,multiclass,17,no_of_tcp_flows_diff,1,0.001397187374427933,0.0004597251757077445
+RandomForest,multiclass,20,no_of_udp_flows_diff,1,0.0001556126150922932,0.00012041329774800182
+RandomForest,multiclass,19,no_of_icmp_flows_diff,1,0.0002769808298376808,0.0001465045764515449
+RandomForest,multiclass,15,no_of_other_flows_diff,1,0.0,0.0
+RandomForest,multiclass,18,no_of_unique_src_addresses_diff,1,0.000204920425340549,0.00010745861906107036
+XGBoost,binary,5,port_rx_packets_std (+14),15,-0.011722156994751676,0.0010886076455513696
+XGBoost,binary,1,flow_packets_per_flow (+4),5,0.02446178427919059,0.0018610646552413347
+XGBoost,binary,2,flow_packet_count_std (+2),3,-0.0010892910148044943,0.0004111288377229002
+XGBoost,binary,7,no_of_total_flows (+3),4,0.06683426773752725,0.0033756417880856536
+XGBoost,binary,10,no_of_tcp_flows (+1),2,0.0,0.0
+XGBoost,binary,12,no_of_udp_flows,1,0.00033449297997575347,0.0006921479791609113
+XGBoost,binary,13,no_of_icmp_flows,1,-0.0002735064540284937,0.000427633830485411
+XGBoost,binary,14,no_of_other_flows,1,0.0,0.0
+XGBoost,binary,8,no_of_unique_src_addresses (+3),4,0.032045993851252605,0.0030210360098242165
+XGBoost,binary,9,no_of_unique_dst_addresses,1,0.0,0.0
+XGBoost,binary,11,no_of_unique_src_ports (+2),3,0.02533744730848473,0.002580952997340574
+XGBoost,binary,4,port_tx_packets_std (+7),8,-0.0013346186921765258,0.0015061969274989579
+XGBoost,binary,21,port_tx_errors_sum,1,0.0,0.0
+XGBoost,binary,22,port_tx_errors_mean,1,0.0,0.0
+XGBoost,binary,23,port_tx_errors_std,1,0.0,0.0
+XGBoost,binary,24,port_tx_dropped_sum,1,0.0,0.0
+XGBoost,binary,25,port_rx_errors_sum,1,0.0,0.0
+XGBoost,binary,3,table_lookup_count_std (+1),2,0.001962061498637535,0.001135798823733319
+XGBoost,binary,6,port_rx_packets_sum_diff (+5),6,0.15100396401534985,0.004082421621938575
+XGBoost,binary,16,no_of_total_flows_diff,1,0.0,0.0
+XGBoost,binary,17,no_of_tcp_flows_diff,1,0.0017924638410972138,0.00042982310334429495
+XGBoost,binary,20,no_of_udp_flows_diff,1,0.0,0.0
+XGBoost,binary,19,no_of_icmp_flows_diff,1,0.0,0.0
+XGBoost,binary,15,no_of_other_flows_diff,1,-0.00020235423887360326,0.00010117711943680163
+XGBoost,binary,18,no_of_unique_src_addresses_diff,1,0.014779356597241477,0.0015418354663873325
+XGBoost,multiclass,5,port_rx_packets_std (+14),15,-0.007923033959663772,0.0009703194653415933
+XGBoost,multiclass,1,flow_packets_per_flow (+4),5,0.016820143265249287,0.0018671374510095123
+XGBoost,multiclass,2,flow_packet_count_std (+2),3,-0.006118565102335804,0.0004733568274284335
+XGBoost,multiclass,7,no_of_total_flows (+3),4,0.048178977572626715,0.002951161148821806
+XGBoost,multiclass,10,no_of_tcp_flows (+1),2,0.0023396870194583586,0.0005400954768730187
+XGBoost,multiclass,12,no_of_udp_flows,1,0.2358437827181044,0.0033011108715506063
+XGBoost,multiclass,13,no_of_icmp_flows,1,0.09915070943905112,0.002970409914836984
+XGBoost,multiclass,14,no_of_other_flows,1,0.0,0.0
+XGBoost,multiclass,8,no_of_unique_src_addresses (+3),4,0.018001598385543015,0.0013530616067330178
+XGBoost,multiclass,9,no_of_unique_dst_addresses,1,0.0,0.0
+XGBoost,multiclass,11,no_of_unique_src_ports (+2),3,0.06660089285529135,0.0019138756626994752
+XGBoost,multiclass,4,port_tx_packets_std (+7),8,-0.0028841462093119998,0.001269172085403111
+XGBoost,multiclass,21,port_tx_errors_sum,1,0.0,0.0
+XGBoost,multiclass,22,port_tx_errors_mean,1,0.0,0.0
+XGBoost,multiclass,23,port_tx_errors_std,1,0.0,0.0
+XGBoost,multiclass,24,port_tx_dropped_sum,1,0.0,0.0
+XGBoost,multiclass,25,port_rx_errors_sum,1,0.0,0.0
+XGBoost,multiclass,3,table_lookup_count_std (+1),2,-0.0004887106148453002,0.000623782859213051
+XGBoost,multiclass,6,port_rx_packets_sum_diff (+5),6,0.06710313690584105,0.002847297202733829
+XGBoost,multiclass,16,no_of_total_flows_diff,1,7.205553577551704e-05,0.00020294250577822273
+XGBoost,multiclass,17,no_of_tcp_flows_diff,1,0.006138337105986236,0.0009693973368120992
+XGBoost,multiclass,20,no_of_udp_flows_diff,1,0.008001731865002183,0.0009333429740703889
+XGBoost,multiclass,19,no_of_icmp_flows_diff,1,0.0016591810476509483,0.00013487010776132259
+XGBoost,multiclass,15,no_of_other_flows_diff,1,0.0,0.0
+XGBoost,multiclass,18,no_of_unique_src_addresses_diff,1,0.003118978689837071,0.00044097490546840046

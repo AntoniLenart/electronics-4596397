@@ -1,0 +1,14 @@
+# TCP SYN Flood Detection
+alert tcp any any -> $HOME_NET any (msg:"Possible SYN flood - many SYNs by src"; flags:S; threshold: type threshold, track by_src, count 10, seconds 5; sid:1000001; rev:2; classtype:attempted-dos;)
+alert tcp any any -> $HOME_NET any (msg:"Possible SYN flood - many SYNs to dst"; flags:S; threshold: type threshold, track by_dst, count 50, seconds 5; sid:1000002; rev:1; classtype:attempted-dos;)
+
+# ICMP Flood Detection
+alert icmp any any -> $HOME_NET any (msg:"Possible ICMP flood - many pings by src"; itype:8; threshold: type threshold, track by_src, count 20, seconds 5; sid:1000010; rev:1; classtype:attempted-dos;)
+alert icmp any any -> $HOME_NET any (msg:"Possible ICMP flood - many pings to dst"; itype:8; threshold: type threshold, track by_dst, count 100, seconds 5; sid:1000011; rev:1; classtype:attempted-dos;)
+
+# UDP Flood Detection
+alert udp any any -> $HOME_NET !5002 (msg:"Possible UDP flood - many packets by src"; threshold: type threshold, track by_src, count 30, seconds 5; sid:1000020; rev:1; classtype:attempted-dos;)
+alert udp any any -> $HOME_NET !5002 (msg:"Possible UDP flood - many packets to dst"; threshold: type threshold, track by_dst, count 150, seconds 5; sid:1000021; rev:1; classtype:attempted-dos;)
+
+# Detect GoldenEye by matching the specific keep-alive and cache bypass headers
+alert tcp any any -> $HOME_NET 80 (msg:"Possible GoldenEye/HTTP KeepAlive flood"; content:"Cache-Control|3A| no-store"; nocase; threshold: type threshold, track by_dst, count 10, seconds 5; sid:1000050; rev:2; classtype:attempted-dos;)

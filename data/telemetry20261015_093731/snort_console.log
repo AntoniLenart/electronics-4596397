@@ -1,0 +1,1029 @@
+Running in IDS mode
+
+        --== Initializing Snort ==--
+Initializing Output Plugins!
+Initializing Preprocessors!
+Initializing Plug-ins!
+Parsing Rules file "/home/mininet/snort-2.9.20/etc/snort.conf"
+PortVar 'HTTP_PORTS' defined :  [ 80:81 311 383 591 593 901 1220 1414 1741 1830 2301 2381 2809 3037 3128 3702 4343 4848 5250 6988 7000:7001 7144:7145 7510 7777 7779 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180:8181 8243 8280 8300 8800 8888 8899 9000 9060 9080 9090:9091 9443 9999 11371 34443:34444 41080 50002 55555 ]
+PortVar 'SHELLCODE_PORTS' defined :  [ 0:79 81:65535 ]
+PortVar 'ORACLE_PORTS' defined :  [ 1024:65535 ]
+PortVar 'SSH_PORTS' defined :  [ 22 ]
+PortVar 'FTP_PORTS' defined :  [ 21 2100 3535 ]
+PortVar 'SIP_PORTS' defined :  [ 5060:5061 5600 ]
+PortVar 'FILE_DATA_PORTS' defined :  [ 80:81 110 143 311 383 591 593 901 1220 1414 1741 1830 2301 2381 2809 3037 3128 3702 4343 4848 5250 6988 7000:7001 7144:7145 7510 7777 7779 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180:8181 8243 8280 8300 8800 8888 8899 9000 9060 9080 9090:9091 9443 9999 11371 34443:34444 41080 50002 55555 ]
+PortVar 'GTP_PORTS' defined :  [ 2123 2152 3386 ]
+Detection:
+   Search-Method = AC-Full-Q
+    Split Any/Any group = enabled
+    Search-Method-Optimizations = enabled
+    Maximum pattern length = 20
+Tagged Packet Limit: 256
+Loading dynamic engine /usr/local/lib/snort_dynamicengine/libsf_engine.so... done
+Loading all dynamic preprocessor libs from /usr/local/lib/snort_dynamicpreprocessor/...
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_ssh_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_modbus_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_reputation_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_appid_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_imap_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_gtp_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_pop_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_s7commplus_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_sdf_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_sip_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_dnp3_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_ftptelnet_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_dce2_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_dns_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_smtp_preproc.so... done
+  Loading dynamic preprocessor library /usr/local/lib/snort_dynamicpreprocessor//libsf_ssl_preproc.so... done
+  Finished Loading all dynamic preprocessor libs from /usr/local/lib/snort_dynamicpreprocessor/
+Log directory = /var/log/snort
+WARNING: ip4 normalizations disabled because not inline.
+WARNING: tcp normalizations disabled because not inline.
+WARNING: icmp4 normalizations disabled because not inline.
+WARNING: ip6 normalizations disabled because not inline.
+WARNING: icmp6 normalizations disabled because not inline.
+Frag3 global config:
+    Max frags: 65536
+    Fragment memory cap: 4194304 bytes
+Frag3 engine config:
+    Bound Address: default
+    Target-based policy: WINDOWS
+    Fragment timeout: 180 seconds
+    Fragment min_ttl:   1
+    Fragment Anomalies: Alert
+    Overlap Limit:     10
+    Min fragment Length:     100
+      Max Expected Streams: 768
+Stream global config:
+    Track TCP sessions: ACTIVE
+    Max TCP sessions: 262144
+    TCP cache pruning timeout: 30 seconds
+    TCP cache nominal timeout: 3600 seconds
+    Memcap (for reassembly packet storage): 8388608
+    Track UDP sessions: ACTIVE
+    Max UDP sessions: 131072
+    UDP cache pruning timeout: 30 seconds
+    UDP cache nominal timeout: 180 seconds
+    Track ICMP sessions: INACTIVE
+    Track IP sessions: INACTIVE
+    Log info if session memory consumption exceeds 1048576
+    Send up to 2 active responses
+    Wait at least 5 seconds between responses
+    Protocol Aware Flushing: ACTIVE
+        Maximum Flush Point: 16000
+Stream TCP Policy config:
+    Bound Address: default
+    Reassembly Policy: WINDOWS
+    Timeout: 180 seconds
+    Limit on TCP Overlaps: 10
+    Maximum number of bytes to queue per session: 1048576
+    Maximum number of segs to queue per session: 2621
+    Options:
+        Require 3-Way Handshake: YES
+        3-Way Handshake Timeout: 180
+        Detect Anomalies: YES
+    Reassembly Ports:
+      21 client (Footprint) 
+      22 client (Footprint) 
+      23 client (Footprint) 
+      25 client (Footprint) 
+      42 client (Footprint) 
+      53 client (Footprint) 
+      79 client (Footprint) 
+      80 client (Footprint) server (Footprint)
+      81 client (Footprint) server (Footprint)
+      109 client (Footprint) 
+      110 client (Footprint) 
+      111 client (Footprint) 
+      113 client (Footprint) 
+      119 client (Footprint) 
+      135 client (Footprint) 
+      136 client (Footprint) 
+      137 client (Footprint) 
+      139 client (Footprint) 
+      143 client (Footprint) 
+      161 client (Footprint) 
+      additional ports configured but not printed.
+Stream UDP Policy config:
+    Timeout: 180 seconds
+PerfMonitor config:
+  Sample Time:      5 seconds
+  Packet Count:     10000
+  Max File Size:    2147483647
+  Base Stats:       ACTIVE
+    Base Stats File:  /home/mininet/snort_logs/snort_perf.csv
+    Max Perf Stats:   INACTIVE
+  Flow Stats:       INACTIVE
+  Event Stats:      INACTIVE
+  Flow IP Stats:    INACTIVE
+  Console Mode:     INACTIVE
+HttpInspect Config:
+    GLOBAL CONFIG
+      Detect Proxy Usage:       NO
+      IIS Unicode Map Filename: /home/mininet/snort-2.9.20/etc/unicode.map
+      IIS Unicode Map Codepage: 1252
+      Memcap used for logging URI and Hostname: 150994944
+      Max Gzip Memory: 838860
+      Max Gzip Sessions: 2621
+      Gzip Compress Depth: 65535
+      Gzip Decompress Depth: 65535
+      Normalize Random Nulls in Text: NO
+    DEFAULT SERVER CONFIG:
+      Server profile: All
+      Ports (PAF): 80 81 311 383 591 593 901 1220 1414 1741 1830 2301 2381 2809 3037 3128 3702 4343 4848 5250 6988 7000 7001 7144 7145 7510 7777 7779 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180 8181 8243 8280 8300 8800 8888 8899 9000 9060 9080 9090 9091 9443 9999 11371 34443 34444 41080 50002 55555 
+      Server Flow Depth: 0
+      Client Flow Depth: 0
+      Max Chunk Length: 500000
+      Small Chunk Length Evasion: chunk size <= 10, threshold >= 5 times
+      Max Header Field Length: 750
+      Max Number Header Fields: 100
+      Max Number of WhiteSpaces allowed with header folding: 200
+      Inspect Pipeline Requests: YES
+      URI Discovery Strict Mode: NO
+      Allow Proxy Usage: NO
+      Disable Alerting: NO
+      Oversize Dir Length: 500
+      Only inspect URI: NO
+      Normalize HTTP Headers: NO
+      Inspect HTTP Cookies: YES
+      Inspect HTTP Responses: YES
+      Extract Gzip from responses: YES
+      Decompress response files:   
+      Unlimited decompression of gzip data from responses: YES
+      Normalize Javascripts in HTTP Responses: YES
+      Max Number of WhiteSpaces allowed with Javascript Obfuscation in HTTP responses: 200
+      Normalize HTTP Cookies: NO
+      Enable XFF and True Client IP: NO
+      Log HTTP URI data: NO
+      Log HTTP Hostname data: NO
+      Extended ASCII code support in URI: NO
+      Ascii: YES alert: NO
+      Double Decoding: YES alert: NO
+      %U Encoding: YES alert: YES
+      Bare Byte: YES alert: NO
+      UTF 8: YES alert: NO
+      IIS Unicode: YES alert: NO
+      Multiple Slash: YES alert: NO
+      IIS Backslash: YES alert: NO
+      Directory Traversal: YES alert: NO
+      Web Root Traversal: YES alert: NO
+      Apache WhiteSpace: YES alert: NO
+      IIS Delimiter: YES alert: NO
+      IIS Unicode Map: GLOBAL IIS UNICODE MAP CONFIG
+      Non-RFC Compliant Characters: 0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 
+      Whitespace Characters: 0x09 0x0b 0x0c 0x0d 
+      Legacy mode: NO
+rpc_decode arguments:
+    Ports to decode RPC on: 111 32770 32771 32772 32773 32774 32775 32776 32777 32778 32779 
+    alert_fragments: INACTIVE
+    alert_large_fragments: INACTIVE
+    alert_incomplete: INACTIVE
+    alert_multiple_requests: INACTIVE
+FTPTelnet Config:
+    GLOBAL CONFIG
+      Inspection Type: stateful
+      Check for Encrypted Traffic: YES alert: NO
+      Continue to check encrypted data: YES
+    TELNET CONFIG:
+      Ports: 23 
+      Are You There Threshold: 20
+      Normalize: YES
+      Detect Anomalies: YES
+    FTP CONFIG:
+      FTP Server: default
+        Ports (PAF): 21 2100 3535 
+        Check for Telnet Cmds: YES alert: YES
+        Ignore Telnet Cmd Operations: YES alert: YES
+        Ignore open data channels: NO
+      FTP Client: default
+        Check for Bounce Attacks: YES alert: YES
+        Check for Telnet Cmds: YES alert: YES
+        Ignore Telnet Cmd Operations: YES alert: YES
+        Max Response Length: 256
+SMTP Config:
+    Ports: 25 465 587 691 
+    Inspection Type: Stateful
+    Normalize: ATRN AUTH BDAT DATA DEBUG EHLO EMAL ESAM ESND ESOM ETRN EVFY EXPN HELO HELP IDENT MAIL NOOP ONEX QUEU QUIT RCPT RSET SAML SEND STARTTLS SOML TICK TIME TURN TURNME VERB VRFY X-EXPS XADR XAUTH XCIR XEXCH50 XGEN XLICENSE X-LINK2STATE XQUE XSTA XTRN XUSR CHUNKING X-ADAT X-DRCP X-ERCP X-EXCH50 
+    Ignore Data: No
+    Ignore TLS Data: No
+    Ignore SMTP Alerts: No
+    Max Command Line Length: 512
+    Max auth Command Line Length: 1000
+    Max Specific Command Line Length: 
+       ATRN:255 AUTH:246 BDAT:255 DATA:246 DEBUG:255 
+       EHLO:500 EMAL:255 ESAM:255 ESND:255 ESOM:255 
+       ETRN:246 EVFY:255 EXPN:255 HELO:500 HELP:500 
+       IDENT:255 MAIL:260 NOOP:255 ONEX:246 QUEU:246 
+       QUIT:246 RCPT:300 RSET:246 SAML:246 SEND:246 
+       SIZE:255 STARTTLS:246 SOML:246 TICK:246 TIME:246 
+       TURN:246 TURNME:246 VERB:246 VRFY:255 X-EXPS:246 
+       XADR:246 XAUTH:246 XCIR:246 XEXCH50:246 XGEN:246 
+       XLICENSE:246 X-LINK2STATE:246 XQUE:246 XSTA:246 XTRN:246 
+       XUSR:246 
+    Max Header Line Length: 1000
+    Max Response Line Length: 512
+    X-Link2State Alert: Yes
+    Drop on X-Link2State Alert: No
+    Alert on commands: None
+    Alert on unknown commands: No
+    SMTP Memcap: 838860
+    MIME Max Mem: 838860
+    Base64 Decoding: Enabled
+    Base64 Decoding Depth: Unlimited
+    Quoted-Printable Decoding: Enabled
+    Quoted-Printable Decoding Depth: Unlimited
+    Unix-to-Unix Decoding: Enabled
+    Unix-to-Unix Decoding Depth: Unlimited
+    Non-Encoded MIME attachment Extraction: Enabled
+    Non-Encoded MIME attachment Extraction Depth: Unlimited
+    Log Attachment filename: Enabled
+    Log MAIL FROM Address: Enabled
+    Log RCPT TO Addresses: Enabled
+    Log Email Headers: Enabled
+    Email Hdrs Log Depth: 1464
+SSH config: 
+    Autodetection: ENABLED
+    Challenge-Response Overflow Alert: ENABLED
+    SSH1 CRC32 Alert: ENABLED
+    Server Version String Overflow Alert: ENABLED
+    Protocol Mismatch Alert: ENABLED
+    Bad Message Direction Alert: DISABLED
+    Bad Payload Size Alert: DISABLED
+    Unrecognized Version Alert: DISABLED
+    Max Encrypted Packets: 20  
+    Max Server Version String Length: 100  
+    MaxClientBytes: 19600 (Default) 
+    Ports:
+	22
+DCE/RPC 2 Preprocessor Configuration
+  Global Configuration
+    DCE/RPC Defragmentation: Enabled
+    Memcap: 102400 KB
+    Events: co 
+    SMB Fingerprint policy: Disabled
+  Server Default Configuration
+    Policy: WinXP
+    Detect ports (PAF)
+      SMB: 139 445 
+      TCP: 135 
+      UDP: 135 
+      RPC over HTTP server: 593 
+      RPC over HTTP proxy: None
+    Autodetect ports (PAF)
+      SMB: None
+      TCP: 1025-65535 
+      UDP: 1025-65535 
+      RPC over HTTP server: 1025-65535 
+      RPC over HTTP proxy: None
+    Invalid SMB shares: C$ D$ ADMIN$ 
+    Maximum SMB command chaining: 3 commands
+    SMB file inspection: Disabled
+DNS config: 
+    DNS Client rdata txt Overflow Alert: ACTIVE
+    Obsolete DNS RR Types Alert: INACTIVE
+    Experimental DNS RR Types Alert: INACTIVE
+    Ports: 53
+SSLPP config:
+    Encrypted packets: not inspected
+    Ports:
+      443      465      563      636      989
+      992      993      994      995     7801
+     7802     7900     7901     7902     7903
+     7904     7905     7906     7907     7908
+     7909     7910     7911     7912     7913
+     7914     7915     7916     7917     7918
+     7919     7920
+    Server side data is trusted
+    Maximum SSL Heartbeat length: 0
+Sensitive Data preprocessor config: 
+    Global Alert Threshold: 25
+    Masked Output: DISABLED
+SIP config: 
+    Max number of sessions: 40000  
+    Max number of dialogs in a session: 4 (Default) 
+    Status: ENABLED
+    Ignore media channel: DISABLED
+    Max URI length: 512  
+    Max Call ID length: 80  
+    Max Request name length: 20 (Default) 
+    Max From length: 256 (Default) 
+    Max To length: 256 (Default) 
+    Max Via length: 1024 (Default) 
+    Max Contact length: 512  
+    Max Content length: 2048  
+    Ports:
+	5060	5061	5600
+    Methods:
+	  invite cancel ack bye register options refer subscribe update join info message notify benotify do qauth sprack publish service unsubscribe prack
+IMAP Config:
+    Ports: 143 
+    IMAP Memcap: 838860
+    MIME Max Mem: 838860
+    Base64 Decoding: Enabled
+    Base64 Decoding Depth: Unlimited
+    Quoted-Printable Decoding: Enabled
+    Quoted-Printable Decoding Depth: Unlimited
+    Unix-to-Unix Decoding: Enabled
+    Unix-to-Unix Decoding Depth: Unlimited
+    Non-Encoded MIME attachment Extraction: Enabled
+    Non-Encoded MIME attachment Extraction Depth: Unlimited
+POP Config:
+    Ports: 110 
+    POP Memcap: 838860
+    MIME Max Mem: 838860
+    Base64 Decoding: Enabled
+    Base64 Decoding Depth: Unlimited
+    Quoted-Printable Decoding: Enabled
+    Quoted-Printable Decoding Depth: Unlimited
+    Unix-to-Unix Decoding: Enabled
+    Unix-to-Unix Decoding Depth: Unlimited
+    Non-Encoded MIME attachment Extraction: Enabled
+    Non-Encoded MIME attachment Extraction Depth: Unlimited
+Modbus config: 
+    Ports:
+	502
+DNP3 config: 
+    Memcap: 262144
+    Check Link-Layer CRCs: ENABLED
+    Ports:
+	20000
+Reputation config: 
+WARNING: Can't find any whitelist/blacklist entries. Reputation Preprocessor disabled.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Initializing rule chains...
+WARNING: /home/mininet/snort-2.9.20/rules/local.rules(2) threshold (in rule) is deprecated; use detection_filter instead.
+
+7 Snort rules read
+    7 detection rules
+    0 decoder rules
+    0 preprocessor rules
+7 Option Chains linked into 4 Chain Headers
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++-------------------[Rule Port Counts]---------------------------------------
+|             tcp     udp    icmp      ip
+|     src       0       0       0       0
+|     dst       1       0       0       0
+|     any       2       2       2       0
+|      nc       2       2       2       0
+|     s+d       0       0       0       0
++----------------------------------------------------------------------------
+
++-----------------------[detection-filter-config]------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[detection-filter-rules]-------------------------------
+| none
+-------------------------------------------------------------------------------
+
++-----------------------[rate-filter-config]-----------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[rate-filter-rules]------------------------------------
+| none
+-------------------------------------------------------------------------------
+
++-----------------------[event-filter-config]----------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[event-filter-global]----------------------------------
+| none
++-----------------------[event-filter-local]-----------------------------------
+| gen-id=1      sig-id=1000021    type=Threshold tracking=dst count=150 seconds=5  
+| gen-id=1      sig-id=1000010    type=Threshold tracking=src count=20  seconds=5  
+| gen-id=1      sig-id=1000001    type=Threshold tracking=src count=10  seconds=5  
+| gen-id=1      sig-id=1000050    type=Threshold tracking=dst count=10  seconds=5  
+| gen-id=1      sig-id=1000011    type=Threshold tracking=dst count=100 seconds=5  
+| gen-id=1      sig-id=1000002    type=Threshold tracking=dst count=50  seconds=5  
+| gen-id=1      sig-id=1000020    type=Threshold tracking=src count=30  seconds=5  
++-----------------------[suppression]------------------------------------------
+| none
+-------------------------------------------------------------------------------
+Rule application order: pass->drop->sdrop->reject->alert->log
+Verifying Preprocessor Configurations!
+
+[ Port Based Pattern Matching Memory ]
++- [ Aho-Corasick Summary ] -------------------------------------
+| Storage Format    : Full-Q 
+| Finite Automaton  : DFA
+| Alphabet Size     : 256 Chars
+| Sizeof State      : Variable (1,2,4 bytes)
+| Instances         : 1
+|     1 byte states : 1
+|     2 byte states : 0
+|     4 byte states : 0
+| Characters        : 20
+| States            : 21
+| Transitions       : 40
+| State Density     : 0.7%
+| Patterns          : 1
+| Match States      : 1
+| Memory (KB)       : 10.76
+|   Pattern         : 0.09
+|   Match Lists     : 0.13
+|   DFA
+|     1 byte states : 5.37
+|     2 byte states : 0.00
+|     4 byte states : 0.00
++----------------------------------------------------------------
+[ Number of patterns truncated to 20 bytes: 1 ]
+pcap DAQ configured to passive.
+Acquiring network traffic from "s1-eth1".
+Reload thread starting...
+Reload thread started, thread 0xb554cb40 (11742)
+Decoding Ethernet
+
+        --== Initialization Complete ==--
+
+   ,,_     -*> Snort! <*-
+  o"  )~   Version 2.9.20 GRE (Build 82) 
+   ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
+           Copyright (C) 2014-2022 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using libpcap version 1.7.4
+           Using PCRE version: 8.38 2015-11-23
+           Using ZLIB version: 1.2.8
+
+           Rules Engine: SF_SNORT_DETECTION_ENGINE  Version 3.2  <Build 1>
+           Preprocessor Object: SF_SSLPP  Version 1.1  <Build 4>
+           Preprocessor Object: SF_SMTP  Version 1.1  <Build 9>
+           Preprocessor Object: SF_DNS  Version 1.1  <Build 4>
+           Preprocessor Object: SF_DCERPC2  Version 1.0  <Build 3>
+           Preprocessor Object: SF_FTPTELNET  Version 1.2  <Build 13>
+           Preprocessor Object: SF_DNP3  Version 1.1  <Build 1>
+           Preprocessor Object: SF_SIP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_SDF  Version 1.1  <Build 1>
+           Preprocessor Object: SF_S7COMMPLUS  Version 1.0  <Build 1>
+           Preprocessor Object: SF_POP  Version 1.0  <Build 1>
+           Preprocessor Object: SF_GTP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_IMAP  Version 1.0  <Build 1>
+           Preprocessor Object: appid  Version 1.1  <Build 5>
+           Preprocessor Object: SF_REPUTATION  Version 1.1  <Build 1>
+           Preprocessor Object: SF_MODBUS  Version 1.1  <Build 1>
+           Preprocessor Object: SF_SSH  Version 1.1  <Build 3>
+Commencing packet processing (pid=11741)
+Can't acquire (-1) - The interface went down!
+===============================================================================
+Memory usage summary:
+  Total non-mmapped bytes (arena):       6868992
+  Bytes in mapped regions (hblkhd):      16105472
+  Total allocated space (uordblks):      4495736
+  Total free space (fordblks):           2373256
+  Topmost releasable block (keepcost):   133920
+===============================================================================
+Packet I/O Totals:
+   Received:      4302772
+   Analyzed:      4302489 ( 99.993%)
+    Dropped:            0 (  0.000%)
+   Filtered:            0 (  0.000%)
+Outstanding:          283 (  0.007%)
+   Injected:            0
+===============================================================================
+Breakdown by protocol (includes rebuilt packets):
+        Eth:      4302977 (100.000%)
+       VLAN:            0 (  0.000%)
+        IP4:      4300193 ( 99.935%)
+       Frag:            0 (  0.000%)
+       ICMP:      1551790 ( 36.063%)
+        UDP:      1258446 ( 29.246%)
+        TCP:      1468904 ( 34.137%)
+        IP6:            0 (  0.000%)
+    IP6 Ext:            0 (  0.000%)
+   IP6 Opts:            0 (  0.000%)
+      Frag6:            0 (  0.000%)
+      ICMP6:            0 (  0.000%)
+       UDP6:            0 (  0.000%)
+       TCP6:            0 (  0.000%)
+     Teredo:            0 (  0.000%)
+    ICMP-IP:            0 (  0.000%)
+    IP4/IP4:            0 (  0.000%)
+    IP4/IP6:            0 (  0.000%)
+    IP6/IP4:            0 (  0.000%)
+    IP6/IP6:            0 (  0.000%)
+        GRE:            0 (  0.000%)
+    GRE Eth:            0 (  0.000%)
+   GRE VLAN:            0 (  0.000%)
+    GRE IP4:            0 (  0.000%)
+    GRE IP6:            0 (  0.000%)
+GRE IP6 Ext:            0 (  0.000%)
+   GRE PPTP:            0 (  0.000%)
+    GRE ARP:            0 (  0.000%)
+    GRE IPX:            0 (  0.000%)
+   GRE Loop:            0 (  0.000%)
+       MPLS:            0 (  0.000%)
+        ARP:         2784 (  0.065%)
+        IPX:            0 (  0.000%)
+   Eth Loop:            0 (  0.000%)
+   Eth Disc:            0 (  0.000%)
+   IP4 Disc:        21053 (  0.489%)
+   IP6 Disc:            0 (  0.000%)
+   TCP Disc:            0 (  0.000%)
+   UDP Disc:            0 (  0.000%)
+  ICMP Disc:            0 (  0.000%)
+All Discard:        21053 (  0.489%)
+      Other:            0 (  0.000%)
+Bad Chk Sum:            0 (  0.000%)
+    Bad TTL:            0 (  0.000%)
+     S5 G 1:           69 (  0.002%)
+     S5 G 2:          419 (  0.010%)
+      Total:      4302977
+===============================================================================
+Action Stats:
+     Alerts:       152436 (  3.543%)
+     Logged:       152436 (  3.543%)
+     Passed:            0 (  0.000%)
+Limits:
+      Match:            0
+      Queue:            0
+        Log:            0
+      Event:      7498648
+      Alert:          685
+Verdicts:
+      Allow:      4302489 ( 99.993%)
+      Block:            0 (  0.000%)
+    Replace:            0 (  0.000%)
+  AllowFlow:            0 (  0.000%)
+  BlockFlow:            0 (  0.000%)
+     Ignore:            0 (  0.000%)
+      Retry:            0 (  0.000%)
+===============================================================================
+Frag3 statistics:
+        Total Fragments: 0
+      Frags Reassembled: 0
+               Discards: 0
+          Memory Faults: 0
+               Timeouts: 0
+               Overlaps: 0
+              Anomalies: 0
+                 Alerts: 0
+                  Drops: 0
+     FragTrackers Added: 0
+    FragTrackers Dumped: 0
+FragTrackers Auto Freed: 0
+    Frag Nodes Inserted: 0
+     Frag Nodes Deleted: 0
+===============================================================================
+===============================================================================
+Stream statistics:
+            Total sessions: 2435480
+              TCP sessions: 1291110
+       Active TCP sessions: 0
+  Non mempool TCP sess mem: 0
+          TCP mempool used: 120259084288
+              UDP sessions: 1144370
+       Active UDP sessions: 1144370
+          UDP mempool used: 120259084288
+             ICMP sessions: 0
+      Active ICMP sessions: 0
+         ICMP mempool used: 120259084288
+               IP sessions: 0
+        Active IP sessions: 0
+           IP mempool used: 120259084288
+                TCP Prunes: 990
+                UDP Prunes: 0
+               ICMP Prunes: 0
+                 IP Prunes: 0
+TCP StreamTrackers Created: 1291681
+TCP StreamTrackers Deleted: 1291681
+              TCP Timeouts: 0
+              TCP Overlaps: 0
+       TCP Segments Queued: 4644
+     TCP Segments Released: 4644
+       TCP Rebuilt Packets: 2214
+         TCP Segments Used: 3946
+              TCP Discards: 5695
+                  TCP Gaps: 0
+      UDP Sessions Created: 1144370
+      UDP Sessions Deleted: 1144370
+              UDP Timeouts: 0
+              UDP Discards: 0
+     ICMP Dest unreachable: 0
+ ICMP Fragmentation needed: 0
+                    Events: 5461
+           Internal Events: 0
+           TCP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 1468416
+           UDP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 1144370
+===============================================================================
+HTTP Inspect - encodings (Note: stream-reassembled packets included):
+    POST methods:                         0         
+    GET methods:                          1322      
+    HTTP Request Headers extracted:       1321      
+    HTTP Request Cookies extracted:       0         
+    Post parameters extracted:            0         
+    HTTP response Headers extracted:      892       
+    HTTP Response Cookies extracted:      0         
+    Unicode:                              0         
+    Double unicode:                       0         
+    Non-ASCII representable:              0         
+    Directory traversals:                 0         
+    Extra slashes ("//"):                 0         
+    Self-referencing paths ("./"):        0         
+    HTTP Response Gzip packets extracted: 0         
+    Gzip Compressed Data Processed:       n/a       
+    Gzip Decompressed Data Processed:     n/a       
+    Http/2 Rebuilt Packets:               0         
+    Total packets processed:              6556      
+    Non-mempool session memory:           0         
+    http_mempool used:                    0         
+    hi_gzip_mempool used:                 0         
+    mime_decode_mempool used:             0         
+    mime_log_mempool used:                0         
+    Current active session:               0         
+===============================================================================
+FTPTelnet Preprocessor Statistics
+  Current active FTP sessions                   : 0
+  Max concurrent FTP sessions                   : 0
+  Total FTP Data sessions                       : 0
+  Max concurrent FTP Data sessions              : 0
+  Current active Telnet sessions                : 0
+  Max concurrent Telnet sessions                : 0
+  Current ftp_telnet session non-mempool memory : 0
+===============================================================================
+SMTP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+dcerpc2 Preprocessor Statistics
+  Total sessions: 0
+ Active sessions: 0
+
+  Memory stats (bytes)
+    Current total: 52428800
+    Maximum total: 52515560
+    Current runtime total: 52428800
+    Maximum runtime total: 52428800
+    Current config total: 0
+    Maximum config total: 82288
+    Current rule options total: 0
+    Maximum rule options total: 0
+    Current routing table total: 0
+    Maximum routing table total: 0
+    Current initialization total: 0
+    Maximum initialization total: 4512
+===============================================================================
+===============================================================================
+SIP Preprocessor Statistics
+  Total sessions: 60
+  Requests: 0
+          invite:   0
+          cancel:   0
+             ack:   0
+             bye:   0
+        register:   0
+         options:   0
+           refer:   0
+       subscribe:   0
+          update:   0
+            join:   0
+            info:   0
+         message:   0
+          notify:   0
+           prack:   0
+  Responses: 0
+             1xx:   0
+             2xx:   0
+             3xx:   0
+             4xx:   0
+             5xx:   0
+             6xx:   0
+             7xx:   0
+             8xx:   0
+             9xx:   0
+ Ignore sessions:   0
+ Ignore channels:   0
+===============================================================================
+IMAP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+POP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+Reputation Preprocessor Statistics
+  Total Memory Allocated: 0
+===============================================================================
+
+Memory Statistics of DNS at: Thu Oct 15 12:39:39 2026
+
+
+Heap Statistics of dns:
+          Total Statistics:
+               Memory in use:              0 bytes
+                No of allocs:              1
+                 No of frees:              1
+         Config Statistics:
+               Memory in use:              0 bytes
+                No of allocs:              1
+                 No of frees:              1
+===============================================================================
+
+Memory Statistics of Frag3 on: Thu Oct 15 12:39:39 2026
+
+    Memory in use         : 0
+    prealloc nodes in use : 0
+
+
+Heap Statistics of frag:
+          Total Statistics:
+               Memory in use:              0 bytes
+                No of allocs:              3
+                 No of frees:              3
+         Config Statistics:
+               Memory in use:              0 bytes
+                No of allocs:              3
+                 No of frees:              3
+===============================================================================
+
+Memory Statistics of FTPTelnet at: Thu Oct 15 12:39:39 2026
+
+       Current active FTP sessions :    0
+       Max concurrent FTP sessions :    0
+           Total FTP Data sessions :    0
+  Max concurrent FTP Data sessions :    0
+    Current active Telnet sessions :    0
+    Max concurrent Telnet sessions :    0
+
+Heap Statistics of ftptelnet:
+          Total Statistics:
+               Memory in use:              0 bytes
+                No of allocs:            622
+                 No of frees:            622
+         Config Statistics:
+               Memory in use:              0 bytes
+                No of allocs:            622
+                 No of frees:            622
+===============================================================================
+ Memory Statistics of Http Inspect on: Thu Oct 15 12:39:39 2026
+
+     Current active session          : 0
+    No of POST methods encountered  : 0
+    No of GET methods encountered   : 1322
+    No of successfully extract post params      : 0
+    No of successfully extract request params   : 1321
+    No of successfully extract response params  : 892
+ Http Memory Pool       :
+      Free Memory:                 0 bytes
+      Used Memory:                 0 bytes
+      Max Memory :                 0 bytes
+ Mime Decode Memory Pool   :
+      Free Memory:                 0 bytes
+      Used Memory:                 0 bytes
+      Max Memory :                 0 bytes
+ Http Gzip Memory Pool     :
+      Free Memory:                 0 bytes
+      Used Memory:                 0 bytes
+      Max Memory :                 0 bytes
+ Http Mime log Memory Pool :
+      Free Memory:                 0 bytes
+      Used Memory:                 0 bytes
+      Max Memory :                 0 bytes
+
+Heap Statistics of httpinspect:
+          Total Statistics:
+               Memory in use:              0 bytes
+                No of allocs:           2759
+                 No of frees:           2759
+        Session Statistics:
+               Memory in use:              0 bytes
+                No of allocs:           2755
+                 No of frees:           2755
+         Config Statistics:
+               Memory in use:              0 bytes
+                No of allocs:              3
+                 No of frees:              3
+        Mempool Statistics:
+               Memory in use:              0 bytes
+                No of allocs:              1
+                 No of frees:              1
+===============================================================================
+SMTP Preprocessor Statistics
+  Total sessions                : 0 
+  Max concurrent sessions       : 0 
+  Current sessions              : 0 
+  SMTP Session 
+     Used Memory  :             0
+     No of Allocs :             0
+     No of Frees  :             0
+  SMTP Config 
+     Used Memory  :          9356
+     No of Allocs :            19
+     No of Frees  :            71
+   Total memory used :          9356
+
+Heap Statistics of smtp:
+          Total Statistics:
+               Memory in use:           9356 bytes
+                No of allocs:             19
+                 No of frees:             71
+         Config Statistics:
+               Memory in use:           9356 bytes
+                No of allocs:             19
+                 No of frees:             71
+===============================================================================
+
+Memory Statistics of Stream on: Thu Oct 15 12:39:39 2026
+
+Stream Session Statistics:
+            Total sessions: 2435480
+              TCP sessions: 1291110
+       Active TCP sessions: 0
+              UDP sessions: 1144370
+       Active UDP sessions: 1144370
+             ICMP sessions: 0
+      Active ICMP sessions: 0
+               IP sessions: 0
+        Active IP sessions: 0
+   TCP Memory Pool:
+        Free Memory:                     0 bytes
+        Used Memory:                     0 bytes
+        Max Memory :                     0 bytes
+   UDP Memory Pool:
+        Free Memory:                     0 bytes
+        Used Memory:                     0 bytes
+        Max Memory :                     0 bytes
+   ICMP Memory Pool:
+        Free Memory:                     0 bytes
+        Used Memory:                     0 bytes
+        Max Memory :                     0 bytes
+   IP Memory Pool:
+        Free Memory:                     0 bytes
+        Used Memory:                     0 bytes
+        Max Memory :                     0 bytes
+   Session Flow Memory Pool:
+        Free Memory:                     0 bytes
+        Used Memory:                     0 bytes
+        Max Memory :                     0 bytes
+
+Heap Statistics of stream:
+          Total Statistics:
+               Memory in use:        2072868 bytes
+                No of allocs:           5661
+                 No of frees:           5657
+        Session Statistics:
+               Memory in use:              0 bytes
+                No of allocs:           5648
+                 No of frees:           5648
+         Config Statistics:
+               Memory in use:        2072868 bytes
+                No of allocs:             13
+                 No of frees:              9
+===============================================================================
+
+Memory Statistics of DCE at: Thu Oct 15 12:39:39 2026
+
+dcerpc2 Preprocessor Statistics:
+                Total sessions :    0
+               Active sessions :    0
+            Total SMB sessions :    0
+            Total TCP sessions :    0
+            Total UDP sessions :    0
+    Total HTTP server sessions :    0
+     Total HTTP proxy sessions :    0
+Total Memory stats :
+                 Current total :    52428800
+                 Maximum total :    52515560
+                  Total memcap :    0
+                    Free total :    0
+SMB Memory stats :
+                 Current total :    52428800
+                 Maximum total :    52428800
+          Current session data :    52428800
+          Maximum session data :    52428800
+   Current segmentation buffer :    0
+   Maximum segmentation buffer :    0
+TCP Memory stats :
+                 Current total :    0
+                 Maximum total :    0
+          Current session data :    0
+          Maximum session data :    0
+UDP Memory stats :
+                 Current total :    0
+                 Maximum total :    0
+          Current session data :    0
+          Maximum session data :    0
+HTTP Memory stats :
+                 Current total :    0
+                 Maximum total :    0
+          Current session data :    0
+          Maximum session data :    0
+
+Heap Statistics of dce:
+          Total Statistics:
+               Memory in use:              0 bytes
+                No of allocs:            115
+                 No of frees:            115
+         Config Statistics:
+               Memory in use:              0 bytes
+                No of allocs:            115
+                 No of frees:            115
+===============================================================================
+
+Memory Statistics of SIP on: Thu Oct 15 12:39:39 2026
+
+    Total Sessions          : 60
+    Current Active Sessions : 0
+
+
+Heap Statistics of sip:
+          Total Statistics:
+               Memory in use:              0 bytes
+                No of allocs:             82
+                 No of frees:             82
+        Session Statistics:
+               Memory in use:              0 bytes
+                No of allocs:             60
+                 No of frees:             60
+         Config Statistics:
+               Memory in use:              0 bytes
+                No of allocs:             22
+                 No of frees:             22
+===============================================================================
+POP Preprocessor Statistics
+  Total sessions                : 0 
+  Max concurrent sessions       : 0 
+  Current sessions              : 0 
+  POP Session 
+     Used Memory  :             0
+     No of Allocs :             0
+     No of Frees  :             0
+  POP Config 
+     Used Memory  :           277
+     No of Allocs :             3
+     No of Frees  :            18
+   Total memory used :           277
+
+Heap Statistics of pop:
+          Total Statistics:
+               Memory in use:            277 bytes
+                No of allocs:              3
+                 No of frees:             18
+         Config Statistics:
+               Memory in use:            277 bytes
+                No of allocs:              3
+                 No of frees:             18
+===============================================================================
+IMAP Preprocessor Statistics
+  Total sessions                : 0 
+  Max concurrent sessions       : 0 
+  Current sessions              : 0 
+  IMAP Session 
+     Used Memory  :             0
+     No of Allocs :             0
+     No of Frees  :             0
+  IMAP Config 
+     Used Memory  :           847
+     No of Allocs :             3
+     No of Frees  :            48
+   Total memory used :           847
+
+Heap Statistics of imap:
+          Total Statistics:
+               Memory in use:            847 bytes
+                No of allocs:              3
+                 No of frees:             48
+         Config Statistics:
+               Memory in use:            847 bytes
+                No of allocs:              3
+                 No of frees:             48
+===============================================================================
+
+Memory Statistics for File at:Thu Oct 15 12:39:39 2026
+
+Total buffers allocated:           0          
+Total buffers freed:               0          
+Total buffers released:            0          
+Total file mempool:                0          
+Total allocated file mempool:      0          
+Total freed file mempool:          0          
+Total released file mempool:       0          
+
+Heap Statistics of file:
+          Total Statistics:
+               Memory in use:            140 bytes
+                No of allocs:              6
+                 No of frees:              1
+        Session Statistics:
+               Memory in use:              0 bytes
+                No of allocs:              1
+                 No of frees:              1
+        Mempool Statistics:
+               Memory in use:            140 bytes
+                No of allocs:              5
+                 No of frees:              0
+===============================================================================
++-----------------------[filtered events]--------------------------------------
+| gen-id=1      sig-id=1000021    type=Threshold tracking=dst count=150 seconds=5   filtered=1210855
+| gen-id=1      sig-id=1000010    type=Threshold tracking=src count=20  seconds=5   filtered=1181686
+| gen-id=1      sig-id=1000001    type=Threshold tracking=src count=10  seconds=5   filtered=1340802
+| gen-id=1      sig-id=1000050    type=Threshold tracking=dst count=10  seconds=5   filtered=1139
+| gen-id=1      sig-id=1000011    type=Threshold tracking=dst count=100 seconds=5   filtered=1192908
+| gen-id=1      sig-id=1000002    type=Threshold tracking=dst count=50  seconds=5   filtered=1373057
+| gen-id=1      sig-id=1000020    type=Threshold tracking=src count=30  seconds=5   filtered=1198201
+Snort exiting
