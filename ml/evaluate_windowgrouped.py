@@ -3,8 +3,7 @@ import json
 import argparse
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import GroupKFold, StratifiedGroupKFold, GridSearchCV
-from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import GroupKFold, StratifiedGroupKFold
 from sklearn.metrics import (accuracy_score, f1_score, precision_score, recall_score)
 import warnings
 
@@ -14,21 +13,15 @@ warnings.filterwarnings('ignore')
 
 
 def nested_eval(model_name, task, X, y, groups, out_dir, n_outer=5, n_inner=3):
-    cfg = common.MODEL_GRIDS[model_name][task]
     outer = StratifiedGroupKFold(n_splits=n_outer, shuffle=True, random_state=42)
     rows = []
     for fold, (tr, te) in enumerate(outer.split(X, y, groups=groups)):
         X_tr, X_te, y_tr, y_te, g_tr = X[tr], X[te], y[tr], y[te], groups[tr]
 
-        scaler = StandardScaler()
-        X_tr_s = scaler.fit_transform(X_tr)
-        X_te_s = scaler.transform(X_te)
-
-        est = common.make_estimator(model_name, task, y_tr)
         inner = GroupKFold(n_splits=min(n_inner, len(np.unique(g_tr))))
-        search = GridSearchCV(est, cfg['grid'], cv=inner, scoring=cfg['scoring'], n_jobs=-1, refit=True)
-        search.fit(X_tr_s, y_tr, groups=g_tr)
-        pred = search.best_estimator_.predict(X_te_s)
+        search = common.make_search(model_name, task, y_tr, inner)
+        search.fit(X_tr, y_tr, groups=g_tr)
+        pred = search.best_estimator_.predict(X_te)
 
         if task == 'binary':
             row = dict(fold=fold, n_train=len(tr), n_test=len(te),

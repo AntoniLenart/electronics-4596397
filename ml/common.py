@@ -5,6 +5,9 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from scipy.stats import chi2 as chi2_dist, binomtest
 from xgboost import XGBClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 
 CLASS_NAMES = ['Normal', 'SYN', 'UDP', 'ICMP', 'GoldenEye']
 MODEL_NAMES = ['LogisticRegression', 'SVM', 'RandomForest', 'XGBoost']
@@ -122,6 +125,16 @@ MODEL_GRIDS = {
         'multiclass': dict(grid={'n_estimators': [100, 200], 'max_depth': [3, 5, 7, 10], 'learning_rate': [0.05, 0.1, 0.2]}, scoring='f1_macro'),
     },
 }
+
+
+def make_search(model_name, task, y_train, inner_cv):
+    """GridSearchCV over a StandardScaler+estimator Pipeline, so the scaler is refit
+    inside each inner fold. Pass unscaled X to fit/predict."""
+    cfg = MODEL_GRIDS[model_name][task]
+    est = make_estimator(model_name, task, y_train)
+    pipe = Pipeline([('scaler', StandardScaler()), ('clf', est)])
+    grid = {'clf__' + k: v for k, v in cfg['grid'].items()}
+    return GridSearchCV(pipe, grid, cv=inner_cv, scoring=cfg['scoring'], n_jobs=-1, refit=True)
 
 
 def mcnemar_test(y_true, pred_a, pred_b):

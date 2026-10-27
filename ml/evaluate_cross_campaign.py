@@ -3,8 +3,7 @@ import json
 import argparse
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import LeaveOneGroupOut, GroupKFold, GridSearchCV
-from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import LeaveOneGroupOut, GroupKFold
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 import warnings
 
@@ -14,21 +13,15 @@ warnings.filterwarnings('ignore')
 
 
 def run(model_name, task, X, y, campaigns, wid, out_dir):
-    cfg = common.MODEL_GRIDS[model_name][task]
     logo = LeaveOneGroupOut()
     rows = []
     for held, (tr, te) in zip(sorted(np.unique(campaigns)), logo.split(X, y, groups=campaigns)):
         X_tr, X_te, y_tr, y_te = X[tr], X[te], y[tr], y[te]
-        scaler = StandardScaler()
-        X_tr_s = scaler.fit_transform(X_tr)
-        X_te_s = scaler.transform(X_te)
-
-        est = common.make_estimator(model_name, task, y_tr)
         n_train_windows = len(np.unique(wid[tr]))
         inner = GroupKFold(n_splits=min(3, n_train_windows))
-        search = GridSearchCV(est, cfg['grid'], cv=inner, scoring=cfg['scoring'], n_jobs=-1, refit=True)
-        search.fit(X_tr_s, y_tr, groups=wid[tr])
-        pred = search.best_estimator_.predict(X_te_s)
+        search = common.make_search(model_name, task, y_tr, inner)
+        search.fit(X_tr, y_tr, groups=wid[tr])
+        pred = search.best_estimator_.predict(X_te)
 
         if task == 'binary':
             row = dict(held_campaign=int(held), n_test=len(te),

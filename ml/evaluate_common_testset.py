@@ -2,8 +2,7 @@ import os
 import argparse
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import GroupKFold, GridSearchCV
-from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import GroupKFold
 from sklearn.metrics import (accuracy_score, f1_score, precision_score,
                              recall_score, confusion_matrix)
 import warnings
@@ -25,10 +24,8 @@ def load_both(original_path, corrected_path):
 
 
 def run_one(model_name, task, X_tr, y_tr, X_te, y_te, groups_tr, out_dir, regime, seed):
-    cfg = common.MODEL_GRIDS[model_name][task]
-    est = common.make_estimator(model_name, task, y_tr)
     inner = GroupKFold(n_splits=min(3, len(np.unique(groups_tr))))
-    search = GridSearchCV(est, cfg['grid'], cv=inner, scoring=cfg['scoring'], n_jobs=-1, refit=True)
+    search = common.make_search(model_name, task, y_tr, inner)
     search.fit(X_tr, y_tr, groups=groups_tr)
     pred = search.best_estimator_.predict(X_te)
 
@@ -61,9 +58,8 @@ def run_seed(seed, do, dc, feats, out_dir):
     print("\n### seed %d: train rows=%d test rows=%d | train windows=%d test windows=%d" % (
         seed, len(tr), len(te), len(np.unique(groups[tr])), len(np.unique(groups[te]))))
 
-    scaler = StandardScaler()
-    X_tr = scaler.fit_transform(X[tr])
-    X_te = scaler.transform(X[te])
+    X_tr = X[tr]
+    X_te = X[te]
     g_tr = groups[tr]
 
     results, mcnemars = [], []

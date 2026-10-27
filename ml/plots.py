@@ -30,14 +30,19 @@ def _style(ax, title, ylabel, xlabel=''):
     ax.tick_params(colors=MUTED, labelsize=9)
 
 
-def _barlabels(ax, bars, fmt='%.2f'):
-    for b in bars:
+def _barlabels(ax, bars, fmt='%.2f', errs=None):
+    for i, b in enumerate(bars):
         h = b.get_height()
         if not np.isfinite(h):
             continue
-        ax.annotate(fmt % h, (b.get_x() + b.get_width() / 2, h),
+        top = h
+        if errs is not None:
+            e = errs[i]
+            if e is not None and np.isfinite(e):
+                top = h + e
+        ax.annotate(fmt % h, (b.get_x() + b.get_width() / 2, top),
                     ha='center', va='bottom', fontsize=7.5, color=INK,
-                    xytext=(0, 2), textcoords='offset points')
+                    xytext=(0, 3), textcoords='offset points')
 
 
 def plot_label_distribution(run_dir, out):
@@ -95,7 +100,7 @@ def plot_leakage_contrast(windowgrouped_dir, random_dir, out):
     gge = [grouped[(m, 'multiclass')]['f1_GoldenEye'].std() if (m, 'multiclass') in grouped else 0 for m in MODEL_NAMES]
     b1 = ax.bar(x - w/2, rg, w, label='Random split (leaky)', color=OKABE['gray'], zorder=3)
     b2 = ax.bar(x + w/2, gg, w, yerr=gge, capsize=3, label='Window-grouped', color=OKABE['vermillion'], zorder=3)
-    _barlabels(ax, b1); _barlabels(ax, b2)
+    _barlabels(ax, b1); _barlabels(ax, b2, errs=gge)
     ax.set_xticks(x); ax.set_xticklabels(MODEL_NAMES, rotation=20, ha='right')
     ax.set_ylim(0, 1.05); _style(ax, '', 'GoldenEye F1'); ax.legend(frameon=False, fontsize=9)
     fig.tight_layout()
@@ -147,7 +152,7 @@ def plot_common_testset_regime(common_dir, out):
                     label='Trained on Snort labels', color=OKABE['blue'], zorder=3)
         b2 = ax.bar(x + w/2, [a for a, _ in cm], w, yerr=[b for _, b in cm], capsize=3,
                     label='Trained on ground truth', color=OKABE['vermillion'], zorder=3)
-        _barlabels(ax, b1); _barlabels(ax, b2)
+        _barlabels(ax, b1, errs=[b for _, b in om]); _barlabels(ax, b2, errs=[b for _, b in cm])
         ax.set_xticks(x); ax.set_xticklabels(MODEL_NAMES, rotation=20, ha='right')
         ax.set_ylim(0, 1.05); _style(ax, '', title); ax.legend(frameon=False, fontsize=8)
     fig.tight_layout()
